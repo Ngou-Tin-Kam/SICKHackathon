@@ -2,7 +2,6 @@
   height: 100vh;
   display: flexbox;
   flex-direction: column;
-  align-items: center;
 }
 
 .AppMain {
@@ -12,5 +11,6 @@
   display: flexbox;
   flex-direction: column;
   color:black;
+  justify-content: center;
 }
 

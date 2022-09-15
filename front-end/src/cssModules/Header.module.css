@@ -1,8 +1,42 @@
-Header {
-    height: 20%;
+.Header {
+    display: flexbox;
+    height: 13%;
     background-color: darkslategray;
+    flex-direction: row;
+    padding-top: 1px;
+    border-bottom: 8px solid black;
 }
 
-Header > Link {
-    color: blue;
+.Logo {
+    width: 40%;
+    margin: auto;
+    float: left;
 }
+
+.Logo > h1 {
+    font-size: 6em;
+    color: aliceblue;
+    font-weight: 200;
+    margin: 0px;
+}
+
+.HeaderButtons {
+    display: flexbox;
+    flex-direction: row;
+    float: right;
+    width: 40%;
+}
+
+.HeaderButtons > button {
+    color: aliceblue;
+    background-color: transparent;
+    border: none;
+    transition-duration: 0.5s;
+    font-size: 2em;
+    border-radius: 5px;
+}
+
+.HeaderButtons > button:hover {
+    background-color: rgb(0, 255, 255, 0.5);
+}
+
