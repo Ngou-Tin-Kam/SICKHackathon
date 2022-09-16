@@ -13,6 +13,10 @@
     float: left;
 }
 
+.Logo:hover {
+    cursor: pointer;
+}
+
 .Logo > h1 {
     font-size: 6em;
     color: aliceblue;

@@ -4,6 +4,8 @@ import ManagersPage from './Components/Pages/ManagersPage';
 import DriversPage from './Components/Pages/DriversPage';
 import Header from './Components/Extras/Header';
 import NotFoundPage from './Components/Pages/NotFoundPage';
+import PackagesPage from './Components/Pages/PackagesPage';
+import DeliveriesPage from './Components/Pages/DeliveriesPage';
 
 import 'react-router-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -17,7 +19,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/driversPage" element={<DriversPage />} />
-          <Route path="/ManagersPage" element={<ManagersPage />} />
+          <Route path="/managersPage" element={<ManagersPage />} />
+          <Route path="/packagesPage" element={<PackagesPage />} />
+          <Route path="/deliveriesPage" element={<DeliveriesPage />} />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
       </div>
