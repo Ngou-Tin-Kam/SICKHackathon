@@ -1,0 +1,6 @@
+.WelcomeText {
+    display: flexbox;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
