@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: darkslategray;
+}
+
+.app {
+  height: 820px;
+  width: 100vh;
+}
+
+.app-header {
+  justify-content: center;
+  text-align: center;
+}
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+.marker {
+  background-image: url('https://www.kindpng.com/picc/m/700-7009463_icon-shipping-truck-black-and-white-png-transparent.png');
+  background-size: contain;
+  width: 42px;
+  height: 30px;
+  border-radius: 5px;
+  border: solid 5px red;
+}
+
+.marker-delivery {
+  background-image: url('https://www.kindpng.com/picc/m/713-7139517_package-png-hd-parcel-transparent-png.png');
+  background-size: contain;
+  width: 35px;
+  height: 30px;
+  border-radius: 5px;
+  border: solid red 5px;
+}
+
+.search-bar {
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+}

@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import HomePage from './Components/Pages/HomePage';
+import ManagersPage from './Components/Pages/ManagersPage';
+import DriversPage from './Components/Pages/DriversPage';
+import Header from './Components/Extras/Header';
+import NotFoundPage from './Components/Pages/NotFoundPage';
+import PackagesPage from './Components/Pages/PackagesPage';
+import DeliveriesPage from './Components/Pages/DeliveriesPage';
+import Directions from './Components/Pages/Directions';
+
+import 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="AppMain">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/driversPage" element={<DriversPage />} />
+          <Route path="/managersPage" element={<ManagersPage />} />
+          <Route path="/packagesPage" element={<PackagesPage />} />
+          <Route path="/deliveriesPage" element={<DeliveriesPage />} />
+          <Route path="/directions" element={<Directions />} />
+          <Route path="/*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
     </div>
+    </BrowserRouter >
   );
 }
 
