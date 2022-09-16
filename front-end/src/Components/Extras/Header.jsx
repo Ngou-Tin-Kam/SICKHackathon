@@ -1,6 +1,6 @@
 import style from '../../cssModules/Header.module.css';
 
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const Header = () => {
     
@@ -10,7 +10,7 @@ const Header = () => {
         <div className={style.Header}>
             
             <div className={style.Logo}>
-                <h1>Qommon!</h1>
+                <h1 onClick={() => navigator('/')}>Qommon!</h1>
             </div>
             
             <div className={style.HeaderButtons}>

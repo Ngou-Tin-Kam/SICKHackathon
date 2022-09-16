@@ -1,7 +1,5 @@
 .App {
   height: 100vh;
-  display: flexbox;
-  flex-direction: column;
 }
 
 .AppMain {
@@ -9,8 +7,8 @@
   height: 100%;
   padding-top: 1px;
   display: flexbox;
-  flex-direction: column;
+  flex-direction: row;
   color:black;
-  justify-content: center;
+  justify-items: center;
 }
 
