@@ -1,24 +1,37 @@
-
 const express = require('express');
+
 const app = express();
 
-const cors = require('cors');
-app.use(cors());
-app.use(express.json());
+const bodyParser = require('body-parser');
 
-const dotenv = require('dotenv');
+app.use(bodyParser.json());
 
-// dotenv.config({ path: './config/config.env' });
-// const port = process.env.PORT;
+const packageRoutes = require('./controllers/PackageController');
 
-const packagesRoutes = require('./controllers/PackageController');
-const connectDB = require('./config/db');
+app.use('/package', packageRoutes);
 
-connectDB();
+const deliveryRoutes = require('./controllers/DeliveriesController');
 
+app.use('/delivery', deliveryRoutes);
 
-app.use(express.urlencoded({ extended: false }));
+const driverRoutes = require('./controllers/DriversController');
 
-app.use('/packages', );
+app.use('/driver', driverRoutes);
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+app.get('/greeting', (req, res) => res.send("Welcome"));
+
+app.get('/getError', (req, res, next) => next({ status: 418, msg: 'Problem?' }));
+
+app.use('*', (req, res, next) => next({ status: 404, msg: 'No Valid URL Found' }));
+
+app.use((err, req, res, next) => {
+  console.log('Error encountered:');
+  console.log(err.msg);
+  return res.status(err.status).send(err.msg);
+});
+
+const server = app.listen(5000, () => {
+  console.log(`Started server on port No. ${server.address().port}`);
+});
+
+module.exports = server;
