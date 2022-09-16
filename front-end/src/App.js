@@ -1,29 +1,31 @@
-import './App.css';
-import HomePage from './Components/Pages/HomePage';
-import ManagersPage from './Components/Pages/ManagersPage';
-import DriversPage from './Components/Pages/DriversPage';
-import Header from './Components/Extras/Header';
-import NotFoundPage from './Components/Pages/NotFoundPage';
+import './App.css'
+import HomePage from './Components/Pages/HomePage'
+import ManagersPage from './Components/Pages/ManagersPage'
+import DriversPage from './Components/Pages/DriversPage'
+import Header from './Components/Extras/Header'
+import NotFoundPage from './Components/Pages/NotFoundPage'
+import Directions from './Components/Pages/Directions'
 
-import 'react-router-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <BrowserRouter>
-    <div className="App">
-      <Header />
-      <div className="AppMain">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/driversPage" element={<DriversPage />} />
-          <Route path="/ManagersPage" element={<ManagersPage />} />
-          <Route path="/*" element={<NotFoundPage />} />
-        </Routes>
+      <div className='App'>
+        <Header />
+        <div className='AppMain'>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/driversPage' element={<DriversPage />} />
+            <Route path='/ManagersPage' element={<ManagersPage />} />
+            <Route path='/Directions' element={<Directions />} />
+            <Route path='/*' element={<NotFoundPage />} />
+          </Routes>
+        </div>
       </div>
-    </div>
-    </BrowserRouter >
-  );
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
