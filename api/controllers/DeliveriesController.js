@@ -1,9 +1,9 @@
 const router = require('express').Router();
 
-const { Packages } = require('../models/Models');
+const { Deliveries } = require('../models/Models');
 
 router.get('/getUnassigned', (req, res, next) => {   
-    Packages.find({"assigned": t})
+    Deliveries.find({"assigned": t})
         .then((result) => res.status(200).json(result))
         .catch((err) => next(err));
 });
@@ -11,15 +11,15 @@ router.get('/getUnassigned', (req, res, next) => {
 router.post('/postNewPackage', (req, res, next) => {
     if (!req.body) return next({ status: 400, msg: 'Incomplete/No Body Provided' });
 
-    Packages.create(req.body)
+    Deliveries.create(req.body)
         .then((result) => res.status(201).json(result))
         .catch((err) => next(err));
 });
 
-router.delete('/deletDelivery/:id', (req, res, next) => {
+router.delete('/deletePackage/:id', (req, res, next) => {
     const {id} = req.params;
 
-    Packages.delete({"_id": id})
+    Deliveries.delete({"_id": id})
         .then((result) => res.status(204).json(result))
         .catch((err) => next(err))
 });
@@ -27,7 +27,7 @@ router.delete('/deletDelivery/:id', (req, res, next) => {
 router.patch('/packageAssigned/:id', (req, res, next) => {
     const { id } = req.params;
 
-    Packages.updateOne({"_id": id}, {"assigned": true})
+    Deliveries.updateOne({"_id": id}, {"assigned": true})
         .then((result) => res.status(200).json(result))
         .catch((err) => next(err))
 });
@@ -35,7 +35,7 @@ router.patch('/packageAssigned/:id', (req, res, next) => {
 router.patch('/packageDelivered/:id', (req, res, next) => {
     const { id } = req.params;
 
-    Packages.updateOne({"_id": id}, {"delivered": true})
+    Deliveries.updateOne({"_id": id}, {"delivered": true})
         .then((result) => res.status(200).json(result))
         .catch((err) => next(err))
 });
